@@ -1,0 +1,40 @@
+/* Final launch polish: preserve the established motion, increase proof contrast. */
+.project-slide .h-card{
+  background:linear-gradient(180deg,rgba(237,242,244,.105),rgba(237,242,244,.05))!important;
+  border-color:rgba(141,153,174,.24)!important;
+}
+.project-slide .eubrics-featured{
+  background:radial-gradient(circle at 86% 12%,rgba(61,213,243,.14),transparent 34%),linear-gradient(180deg,rgba(237,242,244,.14),rgba(237,242,244,.065))!important;
+  border-color:rgba(61,213,243,.48)!important;
+  box-shadow:0 30px 88px rgba(0,0,0,.34),0 0 0 1px rgba(61,213,243,.08) inset!important;
+}
+.project-case-button,.project-link{
+  font-weight:700!important;
+  transition:transform .2s ease,filter .2s ease,background .2s ease!important;
+}
+.project-case-button{
+  background:#fdf0d5!important;
+  color:#000!important;
+  border-color:transparent!important;
+}
+.eubrics-featured .project-case-button{
+  background:#3dd5f3!important;
+  color:#000!important;
+  box-shadow:0 10px 26px rgba(61,213,243,.18);
+}
+.eubrics-featured .project-link{
+  background:#c1121f!important;
+  color:#fff!important;
+  border-color:#c1121f!important;
+}
+.project-link{
+  background:rgba(102,155,188,.14)!important;
+  color:#fdf0d5!important;
+  border-color:rgba(102,155,188,.32)!important;
+}
+.project-case-button:hover,.project-link:hover{transform:translateY(-2px);filter:brightness(1.06)}
+.proof-shot{width:100%;height:100%;margin:0;display:grid;grid-template-rows:minmax(0,1fr) auto;gap:8px;overflow:hidden}
+.proof-shot img,.project-proof-image{width:100%;height:100%;object-fit:contain;display:block;border-radius:18px;background:#fff}
+.proof-shot figcaption{font:500 9px/1.35 "DM Mono",monospace;letter-spacing:.02em;opacity:.55;text-align:center}
+html{scroll-behavior:smooth}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
