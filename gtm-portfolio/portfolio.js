@@ -2,6 +2,10 @@
 const root = document.documentElement;
 const toggle = document.querySelector('[data-theme-toggle]');
 const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const launchStyles = document.createElement('link');
+launchStyles.rel = 'stylesheet';
+launchStyles.href = 'launch.css';
+document.head.appendChild(launchStyles);
 function applyTheme(theme) {
 const dark = theme === 'dark';
 root.dataset.theme = dark ? 'dark' : 'light';
@@ -111,6 +115,11 @@ modal.classList.add('is-open'); modal.setAttribute('aria-hidden','false'); docum
 document.querySelectorAll('[data-project-case]').forEach(btn => btn.addEventListener('click', () => openModal(btn.dataset.projectCase)));
 document.querySelectorAll('[data-case-close]').forEach(btn => btn.addEventListener('click', closeModal));
 window.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+const buttonLabels = {jobready:'View work', leados:'View build', eubrics:'View proof', techiebutler:'View strategy'};
+Object.entries(buttonLabels).forEach(([key,label]) => {
+const btn = document.querySelector(`[data-project-case="${key}"]`);
+if (btn) btn.textContent = label;
+});
 const evidenceNames = ['detect','research','systemize','activate','learn'];
 evidenceNames.forEach(async (name) => {
 try {
