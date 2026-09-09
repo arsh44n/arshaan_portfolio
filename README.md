@@ -2,9 +2,8 @@
 
 Signal-led GTM systems, outbound workflows, and revenue engineering work.
 
-The publish-ready static portfolio is in [`gtm-portfolio/`](./gtm-portfolio/).
+**Live portfolio:** https://arshaan-gtm-portfolio-lead-os3.vercel.app/
 
-GitHub Pages deployment is configured through `.github/workflows/deploy-gtm-portfolio.yml`.
+The static portfolio source is in [`gtm-portfolio/`](./gtm-portfolio/). It includes the light/dark theme, real sanitized workflow evidence, selected work, and the signal-led GTM journey.
 
-Intended public URL after Pages is enabled for this repository:
-`https://arsh44n.github.io/arshaan_portfolio/`
+Deployment: Vercel production.
