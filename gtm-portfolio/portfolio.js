@@ -112,7 +112,16 @@ document.querySelectorAll('[data-project-case]').forEach(btn => btn.addEventList
 document.querySelectorAll('[data-case-close]').forEach(btn => btn.addEventListener('click', closeModal));
 window.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
 const evidenceNames = ['detect','research','systemize','activate','learn'];
-evidenceNames.forEach(name => {
-document.querySelectorAll(`[data-evidence="${name}"]`).forEach(img => { img.src = `evidence/${name}.webp`; });
+evidenceNames.forEach(async (name) => {
+try {
+const b64 = await fetch(`evidence/${name}.b64.txt`).then(r => {
+if (!r.ok) throw new Error(r.status);
+return r.text();
+});
+const src = `data:image/webp;base64,${b64.trim()}`;
+document.querySelectorAll(`[data-evidence="${name}"]`).forEach(img => { img.src = src; });
+} catch (err) {
+console.warn(`Evidence image failed: ${name}`, err);
+}
 });
 })();
