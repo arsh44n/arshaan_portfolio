@@ -121,9 +121,10 @@ const btn = document.querySelector(`[data-project-case="${key}"]`);
 if (btn) btn.textContent = label;
 });
 const evidenceNames = ['detect','research','systemize','activate','learn'];
+const evidenceBase = 'https://cdn.jsdelivr.net/gh/arsh44n/arshaan_portfolio@main/gtm-portfolio/evidence/';
 evidenceNames.forEach(async (name) => {
 try {
-const b64 = await fetch(`evidence/${name}.b64.txt`).then(r => {
+const b64 = await fetch(`${evidenceBase}${name}.b64.txt`).then(r => {
 if (!r.ok) throw new Error(r.status);
 return r.text();
 });
